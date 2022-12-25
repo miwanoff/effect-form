@@ -15,16 +15,26 @@
 //   labels[i].innerHTML = newInnerHTML;
 // }
 
-let labels = document.querySelectorAll("label");
-labels.forEach(f);
+// 2
+// let labels = document.querySelectorAll("label");
+// labels.forEach(f);
 
-function f(label) {
-  label.innerHTML = label.innerText.split("").map(mapf).join("");
-}
+// function f(label) {
+//   label.innerHTML = label.innerText.split("").map(mapf).join("");
+// }
 
-function mapf(item, index) {
-  //return item + "!!!";
-  return `<span style="transition-delay:${index * 50}ms;">${item}</span>`;
-}
+// function mapf(item, index) {
+//   //return item + "!!!";
+//   return `<span style="transition-delay:${index * 50}ms;">${item}</span>`;
+// }
 
-
+// 3
+//let labels = document.querySelectorAll("label");
+document.querySelectorAll("label").forEach((label) => {
+  label.innerHTML = label.innerText
+    .split("")
+    .map((item, index) => {
+      return `<span style="transition-delay:${index * 50}ms;">${item}</span>`;
+    })
+    .join("");
+});
